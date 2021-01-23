@@ -105,7 +105,9 @@ class _SignInPageState extends State<SignInPage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(SignUpPage());
+                    },
                     child: Text(
                       'Buat Akun Baru',
                       style: whiteFontStyleRegular,
