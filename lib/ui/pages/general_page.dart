@@ -42,9 +42,10 @@ class GeneralPage extends StatelessWidget {
                         children: [
                           onbackButtonPressed != null
                               ? Container(
+                                  margin: EdgeInsets.only(right: 26),
                                   height: 24,
                                   width: 24,
-                                  child: Text('<'),
+                                  child: Icon(MdiIcons.arrowLeft),
                                 )
                               : SizedBox(),
                           Column(
@@ -59,7 +60,7 @@ class GeneralPage extends StatelessWidget {
                               Text(
                                 subtitle,
                                 style: GoogleFonts.poppins(
-                                    color: "8D92A3".toColor(),
+                                    color: greyColor,
                                     fontWeight: FontWeight.w300),
                               ),
                             ],
