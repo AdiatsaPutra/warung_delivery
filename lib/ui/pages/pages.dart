@@ -5,3 +5,4 @@ import 'package:supercharged/supercharged.dart';
 import 'package:warung_delivery/shared/shared.dart';
 
 part 'general_page.dart';
+part 'sign_in_page.dart';
