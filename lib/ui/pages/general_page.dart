@@ -38,6 +38,8 @@ class GeneralPage extends StatelessWidget {
                       height: 100,
                       color: Colors.white,
                     ),
+                    // CONTENT HERE
+                    child ?? SizedBox()
                   ],
                 ),
               ],
