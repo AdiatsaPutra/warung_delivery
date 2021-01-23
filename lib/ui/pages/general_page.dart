@@ -31,12 +31,41 @@ class GeneralPage extends StatelessWidget {
               children: [
                 Column(
                   children: [
+                    // HEADER HERE
                     Container(
                       margin: EdgeInsets.only(bottom: defaultMargin),
                       padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                       width: double.infinity,
                       height: 100,
                       color: Colors.white,
+                      child: Row(
+                        children: [
+                          onbackButtonPressed != null
+                              ? Container(
+                                  height: 24,
+                                  width: 24,
+                                  child: Text('<'),
+                                )
+                              : SizedBox(),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                title,
+                                style: GoogleFonts.poppins(
+                                    fontSize: 22, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                subtitle,
+                                style: GoogleFonts.poppins(
+                                    color: "8DA923".toColor(),
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                     // CONTENT HERE
                     child ?? SizedBox()
