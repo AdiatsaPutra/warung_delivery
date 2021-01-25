@@ -1,120 +1,136 @@
 part of 'pages.dart';
 
-class SignUpPage extends StatefulWidget {
+class AddressPage extends StatefulWidget {
   @override
-  _SignUpPageState createState() => _SignUpPageState();
+  _AddressPageState createState() => _AddressPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _AddressPageState extends State<AddressPage> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController nameController = TextEditingController();
+    TextEditingController nomorHPController = TextEditingController();
+    TextEditingController alamatController = TextEditingController();
+    TextEditingController nomorRumahController = TextEditingController();
     return GeneralPage(
-      title: 'Daftar',
-      subtitle: 'Daftar untuk mendapatkan pelayanan terbaik kami',
+      title: 'Alamat',
+      subtitle: 'Masukkan Alamat Valid Anda',
       onbackButtonPressed: () {
         Get.back();
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: Container(
-              height: 110,
-              width: 110,
-              margin: EdgeInsets.only(top: 26),
-              padding: EdgeInsets.all(10),
-              // TODO: Add Border Image
-              // decoration: BoxDecoration(
-              //   image: DecorationImage(
-              //     image: null,
-              //   ),
-              // ),
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          'https://i.ytimg.com/vi/KXOthu94GAs/maxresdefault.jpg'),
-                      fit: BoxFit.cover),
-                ),
+          Container(
+            margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
+            child: Text(
+              'NomorHp',
+              style: blackFontStyleMedium,
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.black),
+            ),
+            child: TextField(
+              controller: nomorHPController,
+              obscureText: true,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintStyle: greyFontStyle,
+                  hintText: 'Masukkan NomorHp Anda'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
+            child: Text(
+              'Alamat',
+              style: blackFontStyleMedium,
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.black),
+            ),
+            child: TextField(
+              controller: alamatController,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintStyle: greyFontStyle,
+                  hintText: 'Masukkan Alamat Anda'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
+            child: Text(
+              'Nomor Rumah',
+              style: blackFontStyleMedium,
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.black),
+            ),
+            child: TextField(
+              controller: nomorRumahController,
+              obscureText: true,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintStyle: greyFontStyle,
+                  hintText: 'Masukkan Nomor Rumah Anda'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
+            child: Text(
+              'Kota',
+              style: blackFontStyleMedium,
+            ),
+          ),
+          Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black),
               ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
-            child: Text(
-              'Nama',
-              style: blackFontStyleMedium,
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.black),
-            ),
-            child: TextField(
-              controller: nameController,
-              obscureText: true,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: greyFontStyle,
-                  hintText: 'Masukkan Nama Anda'),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
-            child: Text(
-              'Email Address',
-              style: blackFontStyleMedium,
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.black),
-            ),
-            child: TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: greyFontStyle,
-                  hintText: 'Masukkan Email Anda'),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
-            child: Text(
-              'Password',
-              style: blackFontStyleMedium,
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.black),
-            ),
-            child: TextField(
-              controller: passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: greyFontStyle,
-                  hintText: 'Masukkan Password Anda'),
-            ),
-          ),
-          // Button Masuk
+              child: DropdownButton(
+                  isExpanded: true,
+                  underline: SizedBox(),
+                  items: [
+                    DropdownMenuItem(
+                      child: Text(
+                        'Bandung',
+                        style: blackFontStyleRegular,
+                      ),
+                    ),
+                    DropdownMenuItem(
+                      child: Text(
+                        'Jakarta',
+                        style: blackFontStyleRegular,
+                      ),
+                    ),
+                    DropdownMenuItem(
+                      child: Text(
+                        'Surabaya',
+                        style: blackFontStyleRegular,
+                      ),
+                    ),
+                  ],
+                  onChanged: (item) {})),
+          // Button Lanjut
           Container(
             height: 45,
             width: double.infinity,
@@ -126,11 +142,9 @@ class _SignUpPageState extends State<SignUpPage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
-              onPressed: () {
-                Get.to(AddressPage());
-              },
+              onPressed: () {},
               child: Text(
-                'Lanjut',
+                'Daftar Sekarang',
                 style: whiteFontStyleRegular,
               ),
             ),

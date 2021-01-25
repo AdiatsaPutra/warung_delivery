@@ -44,7 +44,13 @@ class GeneralPage extends StatelessWidget {
                                   margin: EdgeInsets.only(right: 26),
                                   height: 24,
                                   width: 24,
-                                  child: Icon(MdiIcons.arrowLeft),
+                                  child: GestureDetector(
+                                      onTap: () {
+                                        if (onbackButtonPressed != null) {
+                                          onbackButtonPressed();
+                                        }
+                                      },
+                                      child: Icon(MdiIcons.arrowLeft)),
                                 )
                               : SizedBox(),
                           Column(
