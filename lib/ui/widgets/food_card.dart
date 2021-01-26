@@ -14,7 +14,11 @@ class FoodCard extends StatelessWidget {
         ],
       ),
       child: Column(
-        children: [],
+        children: [
+          RatingStars(
+            rate: 3.5,
+          )
+        ],
       ),
     );
   }
