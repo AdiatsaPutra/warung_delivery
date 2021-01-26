@@ -52,7 +52,9 @@ class _FoodPageState extends State<FoodPage> {
               ),
             ),
             // LIST OF FOOD
-            FoodCard()
+            FoodCard(
+              food: mockFood,
+            )
             // TABBED LIST OF FOOD
           ],
         ),
