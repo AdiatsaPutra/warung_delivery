@@ -19,12 +19,104 @@ class Food {
       @required this.rate});
 }
 
-Food mockFood = Food(
-    id: 1,
-    picturePath:
-        'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
-    name: 'Annie',
-    description: 'My Waifu',
-    ingredients: 'Cuteness',
-    price: 0,
-    rate: 3.5);
+List<Food> mockFoods = [
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+  Food(
+      id: 1,
+      picturePath:
+          'https://static.wikia.nocookie.net/shingekinokyojin/images/6/66/Annie_Leonhart_%28Anime%29_character_image.png/revision/latest?cb=20171207050656',
+      name: 'Annie',
+      description: 'My Waifu',
+      ingredients: 'Cuteness',
+      price: 0,
+      rate: 3.5),
+];
