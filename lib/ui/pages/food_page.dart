@@ -6,6 +6,7 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -61,16 +62,61 @@ class _FoodPageState extends State<FoodPage> {
                   Row(
                     children: mockFoods
                         .map(
-                          (food) => FoodCard(
-                            food: food,
+                          (food) => Padding(
+                            padding: EdgeInsets.only(
+                                left: (food == mockFoods.first)
+                                    ? defaultMargin
+                                    : 0,
+                                right: defaultMargin),
+                            child: FoodCard(
+                              food: food,
+                            ),
                           ),
                         )
                         .toList(),
-                  )
+                  ),
                 ],
               ),
             ),
             // TABBED LIST OF FOOD
+            Container(
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                children: [
+                  CustomTabBar(
+                    titles: ['Masakan Kuah', 'Gorengan', 'Minuman'],
+                    selectedIndex: selectedIndex,
+                    onTap: (index) {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Builder(
+                    builder: (_) {
+                      String body = (selectedIndex == 0)
+                          ? 'Masakan Kuah'
+                          : (selectedIndex == 1)
+                              ? 'Gorengan'
+                              : 'Minuman';
+                      return Center(
+                        child: Text(
+                          body,
+                          style: blackFontStyleBig,
+                        ),
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 80,
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ],
