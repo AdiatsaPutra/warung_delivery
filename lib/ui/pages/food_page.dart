@@ -120,12 +120,12 @@ class _FoodPageState extends State<FoodPage> {
                       );
                     },
                   ),
-                  SizedBox(
-                    height: 80,
-                  )
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: 80,
+            ),
           ],
         ),
       ],
