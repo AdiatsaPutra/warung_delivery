@@ -7,3 +7,4 @@ part 'custom_bottom_navigation.dart';
 part 'rating_stars.dart';
 part 'food_card.dart';
 part 'custom_tabbar.dart';
+part 'food_list_item.dart';

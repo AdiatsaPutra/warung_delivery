@@ -27,7 +27,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -36,7 +36,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -45,7 +45,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -54,7 +54,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -63,7 +63,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -72,7 +72,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -81,7 +81,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -90,7 +90,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -99,7 +99,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -108,7 +108,7 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
   Food(
       id: 1,
@@ -117,6 +117,6 @@ List<Food> mockFoods = [
       name: 'Annie',
       description: 'My Waifu',
       ingredients: 'Cuteness',
-      price: 0,
+      price: 576576995,
       rate: 3.5),
 ];
