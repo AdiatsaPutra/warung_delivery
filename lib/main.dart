@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        home: FoodDetailPage(
-      transaction: Transaction(food: mockFoods[0]),
+        home: PaymentPage(
+      transaction: Transaction(food: mockFoods[0], user: mockUser, quantity: 3),
     ));
   }
 }
