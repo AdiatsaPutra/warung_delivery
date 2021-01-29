@@ -48,10 +48,13 @@ class PaymentPage extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(transaction.food.name,
-                                style: blackFontStyleMedium,
-                                maxLines: 1,
-                                overflow: TextOverflow.clip),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width - 198,
+                              child: Text(transaction.food.name,
+                                  style: blackFontStyleMedium,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.clip),
+                            ),
                             Text(
                               NumberFormat.currency(
                                       locale: 'id ID',
@@ -69,7 +72,135 @@ class PaymentPage extends StatelessWidget {
                       style: greyFontStyle.copyWith(fontSize: 13),
                     )
                   ],
-                )
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 16, bottom: 8),
+                  child: Text(
+                    'Detail Transaction',
+                    style: blackFontStyleRegular,
+                  ),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(transaction.food.name, style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        NumberFormat.currency(
+                                locale: 'id ID',
+                                symbol: 'Rp. ',
+                                decimalDigits: 0)
+                            .format(
+                                transaction.quantity * transaction.food.price),
+                        style: blackFontStyleRegular,
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('Driver', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        NumberFormat.currency(
+                                locale: 'id ID',
+                                symbol: 'Rp. ',
+                                decimalDigits: 0)
+                            .format(50000),
+                        style: blackFontStyleRegular,
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('Tax 10%', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        NumberFormat.currency(
+                                locale: 'id ID',
+                                symbol: 'Rp. ',
+                                decimalDigits: 0)
+                            .format(transaction.quantity *
+                                transaction.food.price *
+                                0.1),
+                        style: blackFontStyleRegular,
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('Total', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        NumberFormat.currency(
+                                locale: 'id ID',
+                                symbol: 'Rp. ',
+                                decimalDigits: 0)
+                            .format(transaction.quantity *
+                                    transaction.food.price *
+                                    1.1 +
+                                50000),
+                        style: blackFontStyleRegular.copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: '1ABC9C'.toColor()),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
