@@ -41,7 +41,6 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                 Column(
                   children: [
                     // Back Button
-
                     Container(
                       height: 100,
                       padding: EdgeInsets.symmetric(horizontal: defaultMargin),
@@ -68,9 +67,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         ),
                       ),
                     ),
-
                     // Body
-
                     Container(
                       margin: EdgeInsets.only(top: 180),
                       padding:
@@ -83,6 +80,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         color: Colors.white,
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,9 +88,13 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    widget.transaction.food.name,
-                                    style: blackFontStyleMedium,
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width - 134,
+                                    child: Text(
+                                      widget.transaction.food.name,
+                                      style: blackFontStyleMedium,
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 6,
@@ -146,6 +148,45 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                               ),
                             ],
                           ),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(0, 14, 0, 16),
+                            child: Text(
+                              widget.transaction.food.description,
+                              style: greyFontStyle,
+                            ),
+                          ),
+                          Text('Ingredients', style: blackFontStyleRegular),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(0, 4, 0, 41),
+                            child: Text(
+                              widget.transaction.food.ingredients,
+                              style: greyFontStyle,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Total Harga',
+                                    style: greyFontStyle.copyWith(fontSize: 13),
+                                  ),
+                                  Text(
+                                    NumberFormat.currency(
+                                            locale: 'id-ID',
+                                            symbol: 'Rp. ',
+                                            decimalDigits: 0)
+                                        .format(quantity *
+                                            widget.transaction.food.price),
+                                    style: blackFontStyleMedium.copyWith(
+                                        fontSize: 18),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     )
