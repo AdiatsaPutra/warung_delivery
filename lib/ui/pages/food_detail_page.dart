@@ -185,6 +185,19 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                   ),
                                 ],
                               ),
+                              SizedBox(
+                                width: 163,
+                                height: 45,
+                                child: RaisedButton(
+                                  elevation: 0,
+                                  onPressed: () {},
+                                  color: mainColor,
+                                  child: Text(
+                                    'Beli Sekarang',
+                                    style: whiteFontStyleRegular,
+                                  ),
+                                ),
+                              ),
                             ],
                           )
                         ],
