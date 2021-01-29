@@ -62,6 +62,38 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                   ],
                 ),
               ),
+              // Body
+              Container(
+                width: double.infinity,
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    CustomTabBar(
+                      titles: ['Sedang Diproses', 'Sudah Diproses'],
+                      selectedIndex: selectedIndex,
+                      onTap: (index) {
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Column(
+                children: (selectedIndex == 0
+                        ? inProgressTransaction
+                        : pastTransaction)
+                    .map(
+                      (e) => Text(
+                        e.food.name,
+                      ),
+                    )
+                    .toList(),
+              ),
             ],
           ),
         ],

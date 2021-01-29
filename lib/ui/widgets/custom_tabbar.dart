@@ -40,8 +40,12 @@ class CustomTabBar extends StatelessWidget {
                                 : greyFontStyle,
                           ),
                         ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        // Indicator Line
                         Container(
-                          width: 40,
+                          width: 100,
                           height: 3,
                           padding: EdgeInsets.only(top: 13),
                           decoration: BoxDecoration(
