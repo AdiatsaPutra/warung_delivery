@@ -36,6 +36,8 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
         buttonTap1: () {},
       );
     } else {
+      double listItemWidth =
+          MediaQuery.of(context).size.width - 2 * defaultMargin;
       return ListView(
         children: [
           Column(
@@ -88,8 +90,15 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                         ? inProgressTransaction
                         : pastTransaction)
                     .map(
-                      (e) => Text(
-                        e.food.name,
+                      (e) => Padding(
+                        padding: EdgeInsets.only(
+                            left: defaultMargin,
+                            right: defaultMargin,
+                            bottom: 16),
+                        child: OrderListItem(
+                          transaction: e,
+                          itemWidth: listItemWidth,
+                        ),
                       ),
                     )
                     .toList(),
