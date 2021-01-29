@@ -35,7 +35,7 @@ class IllustrationPage extends StatelessWidget {
           ),
           Text(
             title,
-            style: blackFontStyleRegular.copyWith(fontSize: 30),
+            style: blackFontStyleRegular.copyWith(fontSize: 20),
           ),
           Text(
             subtitle,
@@ -73,7 +73,7 @@ class IllustrationPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      buttonTitle1,
+                      buttonTitle2 ?? 'title',
                       style: whiteFontStyleRegular.copyWith(
                           fontWeight: FontWeight.w500),
                     ),
