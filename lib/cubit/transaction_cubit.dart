@@ -32,7 +32,6 @@ class TransactionCubit extends Cubit<TransactionState> {
               (state as TransactionLoaded).transactions + [result.value]));
       return true;
     } else {
-      emit(FetchTransactionFailed(message: result.message));
       return false;
     }
   }
