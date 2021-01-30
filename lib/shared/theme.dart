@@ -4,6 +4,12 @@ part of 'shared.dart';
 Color mainColor = "DA291C".toColor();
 Color greyColor = "8D92A3".toColor();
 
+// Loading Indicator
+Widget loadingIndicator = SpinKitFadingCircle(
+  size: 45,
+  color: mainColor,
+);
+
 // FontStyles
 TextStyle greyFontStyle = GoogleFonts.poppins(color: greyColor);
 TextStyle blackFontStyleBig = GoogleFonts.poppins(

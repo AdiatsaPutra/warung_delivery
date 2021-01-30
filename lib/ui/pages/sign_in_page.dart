@@ -6,11 +6,11 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    bool isLoading = false;
     return GeneralPage(
       title: 'Welcome To Warung Delivery',
       subtitle: 'Memberikan anda makanan terbaik',
@@ -71,17 +71,34 @@ class _SignInPageState extends State<SignInPage> {
             margin: EdgeInsets.only(top: 24),
             padding: EdgeInsets.symmetric(horizontal: defaultMargin),
             child: isLoading
-                ? SpinKitFadingCircle(
-                    size: 45,
-                    color: mainColor,
-                  )
+                ? loadingIndicator
                 : RaisedButton(
                     elevation: 0,
                     color: mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    onPressed: () {},
+                    onPressed: () async {
+                      setState(() {
+                        isLoading = true;
+                      });
+                      // Sign In User
+                      await context.read<UserCubit>().signIn(
+                          emailController.text, passwordController.text);
+
+                      // Mengambil State Saat Ini
+                      UserState state = context.read<UserCubit>().state;
+
+                      // Get Data Food Dan Transaksi
+                      if (state is UserLoaded) {
+                        // Get Data Food
+                        context.read<FoodCubit>().getFood();
+                        // Get Data Transaksi
+                        context.read<TransactionCubit>().getTransactions();
+                        // Masuk Ke Main Page
+                        Get.to(MainPage());
+                      }
+                    },
                     child: Text(
                       'Masuk',
                       style: whiteFontStyleRegular,
