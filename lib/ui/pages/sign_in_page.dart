@@ -97,6 +97,21 @@ class _SignInPageState extends State<SignInPage> {
                         context.read<TransactionCubit>().getTransactions();
                         // Masuk Ke Main Page
                         Get.to(MainPage());
+                      } else {
+                        Get.snackbar('', '',
+                            titleText: Text(
+                              'Sign In Gagal',
+                              style: whiteFontStyleRegular,
+                            ),
+                            icon: Icon(MdiIcons.closeCircleOutline),
+                            backgroundColor: "D9435E".toColor(),
+                            messageText: Text(
+                              (state as UserSignInFailed).message,
+                              style: whiteFontStyleRegular,
+                            ));
+                        setState(() {
+                          isLoading = false;
+                        });
                       }
                     },
                     child: Text(
