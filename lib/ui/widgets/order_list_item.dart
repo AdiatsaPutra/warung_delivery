@@ -50,8 +50,9 @@ class OrderListItem extends StatelessWidget {
             ),
             (transaction.status == TransactionStatus.canceled)
                 ? Text(
-                    'Batal',
-                    style: blackFontStyleRegular.copyWith(fontSize: 13),
+                    'Dibatalkan',
+                    style: blackFontStyleRegular.copyWith(
+                        fontSize: 13, color: Colors.pink),
                   )
                 : (transaction.status == TransactionStatus.pending)
                     ? Text(

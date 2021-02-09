@@ -49,7 +49,7 @@ List<Transaction> mockTransaction = [
       quantity: 3,
       total: (mockFoods[3].price * 7 + 1.1).round() + 50000,
       datetime: DateTime.now(),
-      status: TransactionStatus.on_delivery,
+      status: TransactionStatus.canceled,
       user: mockUser),
   Transaction(
       id: 2,
