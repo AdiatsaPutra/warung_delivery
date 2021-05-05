@@ -78,5 +78,49 @@ List<Food> mockFoods = [
     ingredients: "Daging Sapi Korea, Telur, Biji Wijen",
     price: 350000,
     rate: 3.4,
-  )
+  ),
+  Food(
+    id: 5,
+    picturePath:
+        "https://cmxpv89733.i.lithium.com/t5/image/serverpage/image-id/478345i84598AB4FEB454CB/image-size/large?v=1.0&px=999",
+    name: "Korean Raw Beef Tartare",
+    description:
+        "Daging sapi Korea cincang yang disajikan mentah dan disiram saus spesial dengan toping kuning telur dan taburan biji wijen.",
+    ingredients: "Daging Sapi Korea, Telur, Biji Wijen",
+    price: 350000,
+    rate: 3.4,
+  ),
+  Food(
+    id: 5,
+    picturePath:
+        "https://cmxpv89733.i.lithium.com/t5/image/serverpage/image-id/478345i84598AB4FEB454CB/image-size/large?v=1.0&px=999",
+    name: "Korean Raw Beef Tartare",
+    description:
+        "Daging sapi Korea cincang yang disajikan mentah dan disiram saus spesial dengan toping kuning telur dan taburan biji wijen.",
+    ingredients: "Daging Sapi Korea, Telur, Biji Wijen",
+    price: 350000,
+    rate: 3.4,
+  ),
+  Food(
+    id: 5,
+    picturePath:
+        "https://cmxpv89733.i.lithium.com/t5/image/serverpage/image-id/478345i84598AB4FEB454CB/image-size/large?v=1.0&px=999",
+    name: "Korean Raw Beef Tartare",
+    description:
+        "Daging sapi Korea cincang yang disajikan mentah dan disiram saus spesial dengan toping kuning telur dan taburan biji wijen.",
+    ingredients: "Daging Sapi Korea, Telur, Biji Wijen",
+    price: 350000,
+    rate: 3.4,
+  ),
+  Food(
+    id: 5,
+    picturePath:
+        "https://cmxpv89733.i.lithium.com/t5/image/serverpage/image-id/478345i84598AB4FEB454CB/image-size/large?v=1.0&px=999",
+    name: "Korean Raw Beef Tartare",
+    description:
+        "Daging sapi Korea cincang yang disajikan mentah dan disiram saus spesial dengan toping kuning telur dan taburan biji wijen.",
+    ingredients: "Daging Sapi Korea, Telur, Biji Wijen",
+    price: 350000,
+    rate: 3.4,
+  ),
 ];

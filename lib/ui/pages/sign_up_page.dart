@@ -26,12 +26,6 @@ class _SignUpPageState extends State<SignUpPage> {
               width: 110,
               margin: EdgeInsets.only(top: 26),
               padding: EdgeInsets.all(10),
-              // TODO: Add Border Image
-              // decoration: BoxDecoration(
-              //   image: DecorationImage(
-              //     image: null,
-              //   ),
-              // ),
               child: Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
