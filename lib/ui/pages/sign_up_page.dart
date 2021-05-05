@@ -110,25 +110,15 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           // Button Masuk
           Container(
-            height: 45,
-            width: double.infinity,
-            margin: EdgeInsets.only(top: 24),
-            padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-            child: RaisedButton(
-              elevation: 0,
-              color: mainColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              onPressed: () {
-                Get.to(AddressPage());
-              },
-              child: Text(
-                'Lanjut',
-                style: whiteFontStyleRegular,
-              ),
-            ),
-          ),
+              height: 45,
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 24),
+              padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.to(AddressPage());
+                  },
+                  child: Text('Lanjut'))),
           // Button Daftar
         ],
       ),

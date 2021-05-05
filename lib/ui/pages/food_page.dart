@@ -28,7 +28,7 @@ class _FoodPageState extends State<FoodPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Welcome,',
+                        'Selamat Datang,',
                         style: blackFontStyleBig,
                       ),
                       Text(
