@@ -190,7 +190,14 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                 height: 45,
                                 child: RaisedButton(
                                   elevation: 0,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.to(PaymentPage(
+                                      transaction: widget.transaction.copyWith(
+                                          quantity: quantity,
+                                          total: quantity *
+                                              widget.transaction.food.price),
+                                    ));
+                                  },
                                   color: mainColor,
                                   child: Text(
                                     'Beli Sekarang',

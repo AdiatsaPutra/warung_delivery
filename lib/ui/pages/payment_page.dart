@@ -9,7 +9,9 @@ class PaymentPage extends StatelessWidget {
     return GeneralPage(
       title: 'Pembayaran',
       subtitle: 'Berikut pembayaran anda',
-      onbackButtonPressed: () {},
+      onbackButtonPressed: () {
+        Get.back();
+      },
       backColor: 'FAFAFC'.toColor(),
       child: Column(
         children: [
@@ -33,6 +35,7 @@ class PaymentPage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
+                        ///Food Image
                         Container(
                           width: 60,
                           height: 60,
@@ -45,6 +48,8 @@ class PaymentPage extends StatelessWidget {
                             ),
                           ),
                         ),
+
+                        ///Food Price
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -67,10 +72,17 @@ class PaymentPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    Text(
-                      '${transaction.quantity} item(s)',
-                      style: greyFontStyle.copyWith(fontSize: 13),
-                    )
+
+                    ///Quantity
+                    (transaction.quantity == 1)
+                        ? Text(
+                            '${transaction.quantity} item',
+                            style: greyFontStyle.copyWith(fontSize: 13),
+                          )
+                        : Text(
+                            '${transaction.quantity} item(s)',
+                            style: greyFontStyle.copyWith(fontSize: 13),
+                          )
                   ],
                 ),
                 Padding(
@@ -80,6 +92,8 @@ class PaymentPage extends StatelessWidget {
                     style: blackFontStyleRegular,
                   ),
                 ),
+
+                ///Food Proce
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -99,8 +113,7 @@ class PaymentPage extends StatelessWidget {
                                 locale: 'id ID',
                                 symbol: 'Rp. ',
                                 decimalDigits: 0)
-                            .format(
-                                transaction.quantity * transaction.food.price),
+                            .format(transaction.total),
                         style: blackFontStyleRegular,
                         textAlign: TextAlign.right,
                       ),
@@ -110,6 +123,8 @@ class PaymentPage extends StatelessWidget {
                 SizedBox(
                   height: 6,
                 ),
+
+                /// Driver
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,6 +154,8 @@ class PaymentPage extends StatelessWidget {
                 SizedBox(
                   height: 6,
                 ),
+
+                /// Pajak
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -158,9 +175,7 @@ class PaymentPage extends StatelessWidget {
                                 locale: 'id ID',
                                 symbol: 'Rp. ',
                                 decimalDigits: 0)
-                            .format(transaction.quantity *
-                                transaction.food.price *
-                                0.1),
+                            .format(transaction.total * 0.1),
                         style: blackFontStyleRegular,
                         textAlign: TextAlign.right,
                       ),
@@ -170,6 +185,8 @@ class PaymentPage extends StatelessWidget {
                 SizedBox(
                   height: 6,
                 ),
+
+                ///Total Nett
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -202,6 +219,179 @@ class PaymentPage extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+          ),
+
+          ///User Detail
+          Container(
+            margin: EdgeInsets.only(bottom: defaultMargin),
+            padding:
+                EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 16),
+            color: Colors.white,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    'Delivered To:',
+                    style: blackFontStyleRegular,
+                  ),
+                ),
+
+                ///User Name
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('Nama', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        transaction.user.name,
+                        style: blackFontStyleRegular,
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+
+                ///Phone No.
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('Phone No.', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        transaction.user.phoneNumber,
+                        style: blackFontStyleRegular,
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+
+                /// User Address
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('Address', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        transaction.user.address,
+                        style: blackFontStyleRegular,
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+
+                ///User House No.
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('House No.', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        transaction.user.houseNumber,
+                        style: blackFontStyleRegular.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+
+                ///User City
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text('City', style: greyFontStyle),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 -
+                          defaultMargin -
+                          5,
+                      child: Text(
+                        transaction.user.city,
+                        style: blackFontStyleRegular.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 45,
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(defaultMargin, 0, defaultMargin, 16),
+            child: RaisedButton(
+              elevation: 0,
+              color: mainColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              onPressed: () {},
+              child: Text(
+                'Bayar Sekarang',
+                style: whiteFontStyleRegular,
+              ),
             ),
           ),
         ],

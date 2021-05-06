@@ -125,22 +125,42 @@ class _FoodPageState extends State<FoodPage> {
                     builder: (_, state) {
                       if (state is FoodLoaded) {
                         List<Food> foods = state.foods
-                            .where((element) =>
-                                element.types.contains((selectedIndex == 0)
-                                    ? FoodTypes.new_food
-                                    : (selectedIndex == 1)
-                                        ? FoodTypes.popular
-                                        : FoodTypes.recomended))
+                            .where(
+                              (element) =>
+                                  element.types.contains((selectedIndex == 0)
+                                      ? FoodTypes.new_food
+                                      : (selectedIndex == 1)
+                                          ? FoodTypes.popular
+                                          : FoodTypes.recomended),
+                            )
                             .toList();
                         return Column(
-                          children: foods
+                          children: state.foods
                               .map(
-                                (element) => Padding(
+                                (food) => Padding(
                                   padding: EdgeInsets.fromLTRB(
                                       defaultMargin, 0, defaultMargin, 16),
-                                  child: FoodListItem(
-                                    food: element,
-                                    itemWidth: listItemWidth,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Get.to(
+                                        FoodDetailPage(
+                                          // Passing Food Data Ke Food Detail Page
+                                          transaction: Transaction(
+                                              food: food,
+                                              user: (context
+                                                      .read<UserCubit>()
+                                                      .state as UserLoaded)
+                                                  .user),
+                                          onBackButtonPressed: () {
+                                            Get.back();
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    child: FoodListItem(
+                                      food: food,
+                                      itemWidth: listItemWidth,
+                                    ),
                                   ),
                                 ),
                               )
