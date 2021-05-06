@@ -10,9 +10,17 @@ class SuccessOrderPage extends StatelessWidget {
         subtitle: 'Silakan tunggu hingga pesanan anda tiba',
         picturePath: 'assets/delivery.png',
         buttonTitle1: 'Pesan Menu Lainnya',
-        buttonTap1: () {},
-        buttonTap2: () {},
+        buttonTap1: () {
+          Get.offAll(MainPage());
+        },
         buttonTitle2: 'Lihat Pesanan Saya',
+        buttonTap2: () {
+          Get.offAll(
+            MainPage(
+              initialPage: 1,
+            ),
+          );
+        },
       ),
     );
   }
